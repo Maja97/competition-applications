@@ -1,0 +1,14 @@
+@import '@app/styles/mixins';
+@import '@app/styles/colors';
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.top {
+  @include flex-align-center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $basic-secondary;
+}
