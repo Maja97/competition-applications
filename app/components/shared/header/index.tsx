@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import styles from './header.module.scss';
+import styles from './index.module.scss';
 
 const Header = () => {
   const today = new Date();

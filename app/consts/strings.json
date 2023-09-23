@@ -1,0 +1,16 @@
+{
+  "applications": {
+    "title": "My applications",
+    "button": "New application"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "This page could not be found",
+    "link": "Go to home page"
+  },
+  "noData": {
+    "title": "No applications yet",
+    "explanation": "List of your requests will appear here when you add gymnasts.",
+    "button": "Apply gymnasts"
+  }
+}

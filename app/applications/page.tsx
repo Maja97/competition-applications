@@ -1,8 +1,10 @@
 import React from 'react';
-import Header from '../components/shared/header/Header';
-import Button from '../components/shared/button/Button';
-import styles from './applications.module.scss';
+import Header from '../components/shared/header';
+import Button from '../components/shared/button';
+import styles from './page.module.scss';
 import SuccessDot from '@public/assets/SuccessDot';
+import NoData from '@app/components/applications/NoData';
+import strings from '@app/consts/strings.json';
 
 export default function Home() {
   return (
@@ -10,12 +12,15 @@ export default function Home() {
       <Header />
       <main>
         <section className={styles.top}>
-          <h1>My applications</h1>
+          <h1>{strings.applications.title}</h1>
           <div className={styles.buttonGroup}>
-            <Button text="New application" />
-            <Button text="Open" icon={<SuccessDot />} variant="secondary" disabled />
+            <Button>{strings.applications.button}</Button>
+            <Button icon={<SuccessDot />} variant="secondary" disabled>
+              Open
+            </Button>
           </div>
         </section>
+        <NoData />
       </main>
     </>
   );
