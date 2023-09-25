@@ -12,3 +12,40 @@
   padding-bottom: 40px;
   border-bottom: 1px solid $basic-secondary;
 }
+
+.tableTitle {
+  margin-bottom: 13px;
+}
+
+.bottom {
+  padding: 17px 0;
+}
+
+.statusCell {
+  padding: 1px 6px;
+  width: fit-content;
+  border-radius: 2px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.redStatus {
+  background-color: $alert;
+  color: $text-on-primary;
+}
+
+.yellowStatus {
+  background-color: $warning;
+  color: $text-on-primary;
+}
+
+.greenStatus {
+  background-color: $success;
+  color: $text-on-primary;
+}
+
+.greyStatus {
+  background-color: $bg-secondary;
+  color: $tertiary-dark;
+}

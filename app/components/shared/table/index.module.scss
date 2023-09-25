@@ -1,0 +1,31 @@
+@import '@app/styles/colors';
+
+.table {
+  border-spacing: 0;
+}
+
+.head {
+  background-color: $bg-table-header;
+}
+
+.headerCell {
+  &:first-child {
+    border-radius: 8px 0 0 0;
+  }
+  &:last-child {
+    border-radius: 0 8px 0 0;
+  }
+}
+
+.row {
+  &:nth-child(2n) {
+    background-color: $bg-table-row;
+  }
+}
+
+.cell {
+  padding: 15px 25px;
+  text-align: start;
+  font-size: 14px;
+  color: $text-primary-light;
+}
