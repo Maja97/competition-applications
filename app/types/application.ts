@@ -10,6 +10,8 @@ export interface Application {
   teamName: string;
   status: string;
   date: string;
+  phone: string;
+  dateOfBirth: string;
 }
 
 export enum ApplicationStatus {
@@ -18,7 +20,3 @@ export enum ApplicationStatus {
   Declined = 'declined',
   Pending = 'awaiting response'
 }
-
-export const CellType = {
-  Status: 'status'
-};

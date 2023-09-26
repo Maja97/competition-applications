@@ -1,11 +1,11 @@
 import React from 'react';
-import { Spinner } from '@chakra-ui/react';
 import styles from '@app/styles/loading.module.scss';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Loading = () => {
   return (
     <div className={styles.wrapper}>
-      <Spinner width={50} height={50} />
+      <CircularProgress />
     </div>
   );
 };

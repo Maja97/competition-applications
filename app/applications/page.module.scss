@@ -49,3 +49,50 @@
   background-color: $bg-secondary;
   color: $tertiary-dark;
 }
+
+.date {
+  font-size: 12px;
+}
+
+.name {
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-primary;
+}
+
+.club {
+  font-size: 12px;
+  line-height: 16px;
+  color: $text-secondary;
+  text-wrap: wrap;
+}
+
+.rowToggle {
+  cursor: pointer;
+}
+
+.actionButton {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  color: $basic-primary;
+  text-decoration: underline;
+}
+
+.collapse {
+  padding: 13px 0;
+  text-align: center;
+}
+
+.collapsed {
+  color: $text-primary-light;
+  font-size: 14px;
+}
+
+.rotatedIcon {
+  transform: rotate(180deg);
+}
+
+.searchInput {
+  margin-right: 9px;
+}

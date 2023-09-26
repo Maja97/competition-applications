@@ -1,7 +1,6 @@
-import React, { ReactNode } from 'react';
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer } from '@chakra-ui/react';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { ReactNode } from 'react';
 import styles from './index.module.scss';
-import { ApplicationStatus, CellType } from '@app/types/application';
 
 interface Props {
   children: ReactNode;
@@ -19,30 +18,26 @@ function DataTable({ children }: Props) {
 
 DataTable.Header = function Header({ children }: Props) {
   return (
-    <Thead className={styles.head}>
-      <Tr>{children}</Tr>
-    </Thead>
+    <TableHead className={styles.head}>
+      <TableRow>{children}</TableRow>
+    </TableHead>
   );
 };
 
 DataTable.Body = function Body({ children }: Props) {
-  return <Tbody>{children}</Tbody>;
+  return <TableBody>{children}</TableBody>;
 };
 
 DataTable.Row = function Row({ children }: Props) {
-  return <Tr className={styles.row}>{children}</Tr>;
+  return <TableRow className={styles.row}>{children}</TableRow>;
 };
 
 DataTable.HeaderCell = function HeaderCell({ children }: Props) {
-  return <Th className={`${styles.cell} ${styles.headerCell}`}>{children}</Th>;
+  return <TableCell className={`${styles.cell} ${styles.headerCell}`}>{children}</TableCell>;
 };
 
-interface CellProps {
-  children: ReactNode;
-}
-
-DataTable.Cell = function Cell({ children }: CellProps) {
-  return <Td className={styles.cell}>{children}</Td>;
+DataTable.Cell = function Cell({ children }: Props) {
+  return <TableCell className={styles.cell}>{children}</TableCell>;
 };
 
 export default DataTable;

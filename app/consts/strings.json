@@ -1,7 +1,20 @@
 {
   "applications": {
     "title": "My applications",
-    "button": "New application"
+    "button": "New application",
+    "filters": {
+      "status": "Status",
+      "category": "Category",
+      "program": "Program",
+      "discipline": "Discipline"
+    },
+    "table": {
+      "requestRemoval": "Request removal",
+      "cancel": "Cancel",
+      "dateOfBirth": "Date of birth",
+      "phoneNumber": "Phone number",
+      "searchPlaceholder": "Search gymnasts"
+    }
   },
   "notFound": {
     "title": "404",

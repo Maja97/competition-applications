@@ -18,13 +18,13 @@
 }
 
 .row {
-  &:nth-child(2n) {
+  &:nth-of-type(4n + 3) {
     background-color: $bg-table-row;
   }
 }
 
 .cell {
-  padding: 15px 25px;
+  padding: 14px;
   text-align: start;
   font-size: 14px;
   color: $text-primary-light;
