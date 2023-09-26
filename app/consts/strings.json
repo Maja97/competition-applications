@@ -48,6 +48,11 @@
     "message": "This page could not be found",
     "link": "Go to home page"
   },
+  "error": {
+    "title": "Oops",
+    "message": "We encountered an error",
+    "link": "Try again"
+  },
   "noData": {
     "title": "No applications yet",
     "explanation": "List of your requests will appear here when you add gymnasts.",
