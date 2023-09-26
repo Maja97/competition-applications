@@ -1,0 +1,78 @@
+@import '@app/styles/mixins';
+
+.fieldRow {
+  @include flex-align-center;
+  column-gap: 10px;
+  margin-bottom: 30px;
+  flex-direction: row;
+}
+
+.closeIcon {
+  height: 40px;
+  margin-top: 24px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  flex: 1;
+}
+
+.inputLabel {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+  color: $text-primary-light;
+  margin-bottom: 5px;
+}
+
+.autocomplete {
+  flex: 1;
+}
+
+.optionalField {
+  flex: 1;
+}
+
+.programs {
+  flex: 2;
+}
+
+.datePicker {
+  flex: 1;
+}
+
+.cancelButton {
+  margin-right: 24px;
+}
+
+.fieldError {
+  color: $alert;
+  font-size: 12px;
+}
+
+.input {
+  color: $text-secondary;
+}
+
+.dialogTitle {
+  font-size: 22px;
+  color: $text-primary-light;
+  font-weight: 700;
+}
+
+.form {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 4px;
+}
+
+.actionButtons {
+  padding: 20px 40px;
+}
+
+.divider {
+  margin-left: 48px;
+  margin-right: 48px;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './index.module.scss';
+import { Box } from '@mui/material';
 
-type Variant = 'primary' | 'secondary' | 'highlight';
+type Variant = 'primary' | 'secondary' | 'highlight' | 'underlined';
 
 interface Props {
   children: JSX.Element | string;
@@ -9,6 +10,7 @@ interface Props {
   icon?: JSX.Element;
   disabled?: boolean;
   className?: string;
+  type?: 'submit' | 'reset' | 'button';
   onClick?: () => void;
 }
 
@@ -18,14 +20,16 @@ const Button = ({
   variant = 'primary',
   icon,
   disabled = false,
-  className
+  className,
+  type = 'button'
 }: Props) => {
   return (
     <button
       onClick={onClick}
       disabled={disabled}
+      type={type}
       className={`${styles[variant]} ${styles.base} ${className}`}>
-      {icon && <div>{icon}</div>}
+      {icon && <Box>{icon}</Box>}
       {typeof children === 'string' ? <p>{children}</p> : children}
     </button>
   );

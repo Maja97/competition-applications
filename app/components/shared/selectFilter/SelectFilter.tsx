@@ -1,4 +1,5 @@
 import {
+  Box,
   InputLabel,
   MenuItem,
   Select,
@@ -26,7 +27,7 @@ function SelectFilter({ label, options, handleChange }: Props) {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <Box className={styles.wrapper}>
       <InputLabel className={styles.label}>{label}: </InputLabel>
       <ThemeProvider theme={theme}>
         <Select
@@ -52,7 +53,7 @@ function SelectFilter({ label, options, handleChange }: Props) {
           ))}
         </Select>
       </ThemeProvider>
-    </div>
+    </Box>
   );
 }
 

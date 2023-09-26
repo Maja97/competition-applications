@@ -79,6 +79,13 @@
   text-decoration: underline;
 }
 
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 27px;
+}
+
 .collapse {
   padding: 13px 0;
   text-align: center;

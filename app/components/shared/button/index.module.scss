@@ -35,3 +35,11 @@
   font-weight: 700;
   line-height: 28px;
 }
+
+.underlined {
+  padding: 0;
+  color: $text-primary-light;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: underline;
+}

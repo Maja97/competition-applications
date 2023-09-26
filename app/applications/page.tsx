@@ -1,6 +1,7 @@
 'use client';
 import NoData from '@app/components/applications/NoData';
 import SearchFilter from '@app/components/applications/SearchFilter';
+import Modal from '@app/components/shared/modal/Modal';
 import SelectFilter, { initialValue } from '@app/components/shared/selectFilter/SelectFilter';
 import DataTable from '@app/components/shared/table';
 import { applicationFilterKeys } from '@app/consts/filters';
@@ -9,13 +10,17 @@ import { tableHeaders } from '@app/consts/tableHeaders';
 import { mapFilters } from '@app/functions/filters';
 import useApplications from '@app/hooks/applications/useApplications';
 import useCountries from '@app/hooks/useCountries';
+import useModal from '@app/hooks/useModal';
 import Loading from '@app/loading';
+import { axiosInstance } from '@app/service/service';
 import { Application, ApplicationStatus } from '@app/types/application';
-import { TableCell, TableRow } from '@mui/material';
+import { Country } from '@app/types/country';
+import { Box, TableCell, TableRow } from '@mui/material';
 import ArrowDown from '@public/assets/ArrowDown';
 import SuccessDot from '@public/assets/SuccessDot';
 import { format } from 'date-fns';
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 import Button from '../components/shared/button';
 import Header from '../components/shared/header';
 import styles from './page.module.scss';
@@ -27,7 +32,19 @@ const initialFilters = {
   status: initialValue
 };
 
+export interface ApplicationData {
+  firstName: string;
+  lastName: string;
+  country: Country;
+  programAndCategory: string;
+  dateOfBirth: string;
+  club: string;
+  teamName: string;
+  phone: string;
+}
+
 export default function Page() {
+  const { isOpen, openModal, closeModal } = useModal();
   const { data, loading } = useApplications();
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [removed, setRemoved] = useState<string[]>([]);
@@ -36,6 +53,7 @@ export default function Page() {
   const searchTimerRef = useRef<NodeJS.Timeout>();
   const [collapsed, setCollapsed] = useState<string[]>([]);
   const [filters, setFilters] = useState(initialFilters);
+  const formMethods = useForm<ApplicationData>();
 
   const toggleCollapsed = (id: string) => {
     setCollapsed((prev) => {
@@ -87,21 +105,49 @@ export default function Page() {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
+  const onSubmit = (data: ApplicationData) => {
+    axiosInstance
+      .post('application', {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        country: data.country.code,
+        programsAndCategory: data.programAndCategory,
+        dateOfBirth: data.dateOfBirth,
+        club: data.club,
+        teamName: data.teamName,
+        phone: data.phone
+      })
+      .then(() => console.log('success'))
+      .catch((err) => console.log('Failed request: ', err));
+  };
+
+  const programsAndCategories = useMemo(() => {
+    const programs = [...new Set(data?.map((application) => application.programName))];
+    const categories = [...new Set(data?.map((application) => application.categoryName))];
+    const res: string[] = [];
+    programs.forEach((program) => {
+      categories.forEach((category) => {
+        res.push(`${program} - ${category}`);
+      });
+    });
+    return res;
+  }, [data]);
+
   return (
     <>
       <Header />
       <main>
         <section className={styles.top}>
           <h1>{strings.applications.title}</h1>
-          <div className={styles.buttonGroup}>
-            <Button>{strings.applications.button}</Button>
+          <Box className={styles.buttonGroup}>
+            <Button onClick={openModal}>{strings.applications.button}</Button>
             <Button icon={<SuccessDot />} variant="secondary" disabled>
               Open
             </Button>
-          </div>
+          </Box>
         </section>
         <section className={styles.bottom}>
-          <div className={styles.filters}>
+          <Box className={styles.filters}>
             <SearchFilter
               className={styles.searchInput}
               placeholder={strings.applications.table.searchPlaceholder}
@@ -127,7 +173,7 @@ export default function Page() {
               label={strings.applications.filters.status}
               options={getFilters(applicationFilterKeys.status)}
             />
-          </div>
+          </Box>
           {filteredData && filteredData?.length > 0 ? (
             <>
               <h3 className={styles.tableTitle}>All requests ({filteredData?.length})</h3>
@@ -224,9 +270,18 @@ export default function Page() {
           ) : loading ? (
             <Loading />
           ) : (
-            <NoData />
+            <NoData openModal={openModal} />
           )}
         </section>
+        <FormProvider {...formMethods}>
+          <Modal
+            isOpen={isOpen}
+            closeModal={closeModal}
+            onSubmit={onSubmit}
+            countries={countries}
+            programsAndCategories={programsAndCategories}
+          />
+        </FormProvider>
       </main>
     </>
   );

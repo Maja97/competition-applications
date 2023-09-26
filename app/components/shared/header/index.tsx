@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from './index.module.scss';
+import { Box } from '@mui/material';
 
 const Header = () => {
   const today = new Date();
@@ -8,7 +9,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.leftSide}>
+      <Box className={styles.leftSide}>
         <Image
           src="/assets/images/logo.png"
           alt="logo image"
@@ -19,11 +20,11 @@ const Header = () => {
         <h3>Competition name&nbsp;</h3>
         <h3 className={styles.dot}>·&nbsp;</h3>
         <h3 className={styles.largeText}>{date}</h3>
-      </div>
-      <div className={styles.rightSide}>
+      </Box>
+      <Box className={styles.rightSide}>
         <Image src={'/assets/images/avatar.png'} width={32} height={32} alt="avatar" />
         <p className={styles.smallText}>Nikola Kavezić</p>
-      </div>
+      </Box>
     </header>
   );
 };

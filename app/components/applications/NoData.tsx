@@ -1,10 +1,9 @@
-import Image from 'next/image';
-import React from 'react';
-import styles from './nodata.module.scss';
-import Button from '../shared/button';
 import strings from '@app/consts/strings.json';
+import Image from 'next/image';
+import Button from '../shared/button';
+import styles from './nodata.module.scss';
 
-const NoData = () => {
+const NoData = ({ openModal }: { openModal: () => void }) => {
   return (
     <section className={styles.section}>
       <Image
@@ -16,7 +15,9 @@ const NoData = () => {
       />
       <h3>{strings.noData.title}</h3>
       <p className={styles.explanation}>{strings.noData.explanation}</p>
-      <Button variant="highlight">{strings.noData.button}</Button>
+      <Button onClick={openModal} variant="highlight">
+        {strings.noData.button}
+      </Button>
     </section>
   );
 };
