@@ -1,0 +1,23 @@
+@import '@app/styles/mixins';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 150px 0;
+  @media screen and (max-width: 1024px) and (max-height: 600px) {
+    padding: 75px;
+  }
+}
+
+.image {
+  margin-bottom: 10px;
+}
+
+.explanation {
+  @include text-lg;
+  margin-bottom: 8px;
+}

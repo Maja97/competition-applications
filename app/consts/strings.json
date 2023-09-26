@@ -1,0 +1,61 @@
+{
+  "applications": {
+    "title": "My applications",
+    "button": "New application",
+    "filters": {
+      "status": "Status",
+      "category": "Category",
+      "program": "Program",
+      "discipline": "Discipline"
+    },
+    "table": {
+      "requestRemoval": "Request removal",
+      "cancel": "Cancel",
+      "dateOfBirth": "Date of birth",
+      "phoneNumber": "Phone number",
+      "searchPlaceholder": "Search gymnasts"
+    },
+    "modal": {
+      "title": "Apply gymnast",
+      "required": "Field is required",
+      "labels": {
+        "firstName": "First name",
+        "lastName": "Last name",
+        "country": "Country",
+        "programAndCategory": "Program and category",
+        "dateOfBirth": "Date of birth",
+        "club": "Club (optional)",
+        "team": "Team (optional)",
+        "phone": "Phone (optional)"
+      },
+      "placeholders": {
+        "firstName": "Enter first name",
+        "lastName": "Enter last name",
+        "programAndCategory": "Program and category",
+        "country": "Country",
+        "dateOfBirth": "Enter date",
+        "club": "Enter club name",
+        "team": "Enter team name",
+        "phone": "Phone number"
+      },
+      "buttonSave": "Save",
+      "buttonCancel": "Cancel",
+      "fieldError": "Please fill all the required fields"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "This page could not be found",
+    "link": "Go to home page"
+  },
+  "error": {
+    "title": "Oops",
+    "message": "We encountered an error",
+    "link": "Try again"
+  },
+  "noData": {
+    "title": "No applications yet",
+    "explanation": "List of your requests will appear here when you add gymnasts.",
+    "button": "Apply gymnasts"
+  }
+}

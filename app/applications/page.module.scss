@@ -1,0 +1,105 @@
+@import '@app/styles/mixins';
+@import '@app/styles/colors';
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.top {
+  @include flex-align-center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $basic-secondary;
+}
+
+.tableTitle {
+  margin-bottom: 13px;
+}
+
+.bottom {
+  padding: 17px 0;
+}
+
+.statusCell {
+  padding: 1px 6px;
+  width: fit-content;
+  border-radius: 2px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.redStatus {
+  background-color: $alert;
+  color: $text-on-primary;
+}
+
+.yellowStatus {
+  background-color: $warning;
+  color: $text-on-primary;
+}
+
+.greenStatus {
+  background-color: $success;
+  color: $text-on-primary;
+}
+
+.greyStatus {
+  background-color: $bg-secondary;
+  color: $tertiary-dark;
+}
+
+.date {
+  font-size: 12px;
+}
+
+.name {
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-primary;
+}
+
+.club {
+  font-size: 12px;
+  line-height: 16px;
+  color: $text-secondary;
+  text-wrap: wrap;
+}
+
+.rowToggle {
+  cursor: pointer;
+}
+
+.actionButton {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  color: $basic-primary;
+  text-decoration: underline;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 27px;
+}
+
+.collapse {
+  padding: 13px 0;
+  text-align: center;
+}
+
+.collapsed {
+  color: $text-primary-light;
+  font-size: 14px;
+}
+
+.rotatedIcon {
+  transform: rotate(180deg);
+}
+
+.searchInput {
+  margin-right: 9px;
+}

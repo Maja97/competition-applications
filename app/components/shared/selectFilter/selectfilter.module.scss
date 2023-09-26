@@ -1,0 +1,26 @@
+@import '@app/styles/colors';
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.label {
+  color: $text-primary-light;
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.select {
+  padding: 0 4px;
+  font-size: 14px;
+}
+
+.selectInput {
+  padding: 0;
+}
+
+.selectMenu {
+  padding: 0;
+}

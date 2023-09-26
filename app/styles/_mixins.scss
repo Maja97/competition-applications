@@ -7,8 +7,9 @@
 
 @mixin text-lg() {
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 400;
   color: $text-secondary;
+  line-height: 20px;
 }
 
 @mixin text-sm() {
